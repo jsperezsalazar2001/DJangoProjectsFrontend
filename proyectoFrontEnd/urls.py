@@ -19,5 +19,6 @@ from temperature import views as temperature_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', temperature_views.temperature, name='temperature'),
+    path('temperature/', temperature_views.temperature, name='temperature'),
+    path('', temperature_views.mediciones, name='mediciones'),
 ]

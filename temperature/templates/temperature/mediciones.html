@@ -1,0 +1,23 @@
+{% extends 'temperature/base.html' %}
+{% block content %}
+<div class="container">
+    <form method="get">
+        <label>Inserte los datos para la tabla Medición</label><br>
+        <input name="fecha" value="Fecha"><br>
+        <input name="origen" value="Origen"><br>
+        <input type="number" name="valor" value="Valor"><br>
+        <input name="codigos" value="Código sensor"><br>
+        <input name="observacion" value="Observación"><br>
+        <button type="submit">Adicionar</button><br>
+    </form>
+    {% for medicion in mediciones %}
+    <ul class="list-group">
+        <li class="list-group-item">Fecha: {{medicion.fecha}}</li>
+        <li class="list-group-item">Origen: {{medicion.origen}}</li>
+        <li class="list-group-item">Valor = {{medicion.valor}}</li>
+        <li class="list-group-item">Código sensor: {{medicion.codigos}}</li>
+        <li class="list-group-item">Observación: {{medicion.observacion}}</li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}
