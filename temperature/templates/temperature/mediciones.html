@@ -3,11 +3,21 @@
 <div class="container">
     <form method="get">
         <label>Inserte los datos para la tabla Medición</label><br>
-        <input name="fecha" value="Fecha"><br>
-        <input name="origen" value="Origen"><br>
-        <input type="number" name="valor" value="Valor"><br>
-        <input name="codigos" value="Código sensor"><br>
-        <input name="observacion" value="Observación"><br>
+        <label>Fecha: </label>
+        <input name="fecha"><br>
+        <label>Origen: </label>
+        <select name="origen">
+            <option>Sensor en terreno</option>
+            <option>Imagen satelital</option>
+            <option>Imagen dron</option>
+            <option>Dato derivado</option>
+        </select><br>
+        <label>Valor: </label>
+        <input type="number" name="valor" min="0"><br>
+        <label>Código Sensor: </label>
+        <input name="codigos"><br>
+        <label>Observación: </label>
+        <input name="observacion"><br>
         <button type="submit">Adicionar</button><br>
     </form>
     {% for medicion in mediciones %}
