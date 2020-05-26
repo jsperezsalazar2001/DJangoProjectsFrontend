@@ -10,12 +10,12 @@ def temperature(request):
         if value:
             # Crea el json para realizar la petición POST al Web Service
             args = {'type': dataType, 'value': value}
-            response = requests.post('http://127.0.0.1:8000/temperatures/', args)
+            response = requests.post('https://pi1-eafit-jsperezs.azurewebsites.net/temperatures/', args)
             # Convierte la respuesta en JSON
             temperature_json = response.json()
 
     # Realiza una petición GET al Web Services
-    response = requests.get('http://127.0.0.1:8000/temperatures/')
+    response = requests.get('https://pi1-eafit-jsperezs.azurewebsites.net/temperatures/')
     # Convierte la respuesta en JSON
     temperatures = response.json()
     # Rederiza la respuesta en el template measure
@@ -35,12 +35,12 @@ def mediciones(request):
             # Crea el json para realizar la petición POST al Web Service
             args = {'fecha': fecha, 'origen': origen, 'valor': valor, 'codigos': codigos, 'observacion': observacion}
             print(args)
-            response = requests.post('http://127.0.0.1:8000/mediciones/', args)
+            response = requests.post('https://pi1-eafit-jsperezs.azurewebsites.net/mediciones/', args)
             # Convierte la respuesta en JSON
             medicion_json = response.json()
 
     # Realiza una petición GET al Web Services
-    response = requests.get('http://127.0.0.1:8000/mediciones/')
+    response = requests.get('https://pi1-eafit-jsperezs.azurewebsites.net/mediciones/')
     # Convierte la respuesta en JSON
     mediciones = response.json()
     # Rederiza la respuesta en el template measure
